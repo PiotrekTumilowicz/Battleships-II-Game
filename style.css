@@ -150,46 +150,46 @@ p {
 	}
 
 	.game-grid {
-		width: 200px;
-		height: 200px;
+		width: 300px;
+		height: 300px;
 	}
 
 	.block {
-		width: 20px;
-		height: 20px;
-		border: 1px solid #d6cdcd;
+		width: 30px;
+		height: 30px;
+		border: 2px solid #d6cdcd;
 		border-radius: 3px;
 	}
 
 	.destroyer-preview {
-		width: 20px;
+		width: 30px;
 		height: 10px;
 		margin: 3px;
 		border-radius: 5px;
 	}
 	.submarine-preview {
-		width: 30px;
-		height: 10px;
-		margin: 3px;
-		border-radius: 5px;
-	}
-
-	.cruiser-preview {
-		width: 30px;
-		height: 10px;
-		margin: 3px;
-		border-radius: 5px;
-	}
-
-	.battleship-preview {
 		width: 40px;
 		height: 10px;
 		margin: 3px;
 		border-radius: 5px;
 	}
 
-	.carrier-preview {
+	.cruiser-preview {
+		width: 40px;
+		height: 10px;
+		margin: 3px;
+		border-radius: 5px;
+	}
+
+	.battleship-preview {
 		width: 50px;
+		height: 10px;
+		margin: 3px;
+		border-radius: 5px;
+	}
+
+	.carrier-preview {
+		width: 60px;
 		height: 10px;
 		margin: 3px;
 		border-radius: 5px;
@@ -212,15 +212,15 @@ p {
 	}
 
 	.sunk-message {
-		font-size: 12px;
+		font-size: 18px;
 	}
 
 	#message-container {
-		font-size: 12px;
+		font-size: 18px;
 	}
 
 	#reset-button {
-		font-size: 8px;
+		font-size: 14px;
 		margin: 1px 0;
 		padding: 4px 0;
 	}
@@ -228,7 +228,7 @@ p {
 	#option-container {
 		font-size: 8px;
 		width: 200px;
-		height: 30px;
+		height: 40px;
 		margin: 10px 0;
 	}
 
