@@ -1,58 +1,136 @@
-.option-container {
-	width: 500px;
-	height: 60px;
-    margin: 30px 0;;
-	background: yellow;
-    display: flex;
-    align-items: center;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	background-color: #d6cdcd;
+	font-family: courier;
+	/* font-family: 'Open Sans', sans-serif; */
+	color: #1d222e;
+	/* font-family: 'Poppins', sans-serif; */
 }
 
-.destroyer {
-	background-color: purple;
+/* black #1d222e */
+/* red #d74846 */
+
+#wrapper {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	left: 50%;
+	top: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+#gamesGrid-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.game-grid {
+	width: 200px;
+	height: 200px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.block {
+	width: 20px;
+	height: 20px;
+	border: 1px solid #d6cdcd;
+	background-color: #c0b3b4;
+	box-sizing: border-box;
+	border-radius: 3px;
 }
 
 .destroyer-preview {
 	width: 20px;
 	height: 10px;
 	margin: 3px;
+	border-radius: 5px;
 }
-
-.submarine {
-	background-color: blue;
-}
-
 .submarine-preview {
 	width: 30px;
 	height: 10px;
 	margin: 3px;
-}
-
-.cruiser {
-	background-color: green;
+	border-radius: 5px;
 }
 
 .cruiser-preview {
 	width: 30px;
 	height: 10px;
 	margin: 3px;
-}
-
-.battleship {
-	background-color: orange;
+	border-radius: 5px;
 }
 
 .battleship-preview {
 	width: 40px;
 	height: 10px;
 	margin: 3px;
-}
-
-.carrier {
-	background-color:cadetblue;
+	border-radius: 5px;
 }
 
 .carrier-preview {
 	width: 50px;
 	height: 10px;
 	margin: 3px;
+	border-radius: 5px;
+}
+
+.undestroyed-ship-color{
+	background-color: #1d222e;
+}
+
+.destroyed-ship-color{
+	background-color: #d74846;
+}
+
+.boom {
+	background-color: #d74846 !important;
+}
+
+.empty {
+	background-color: #fff !important;
+}
+
+.sunk-message {
+	font-size: 12px;
+}
+
+#message-container {
+	text-align: center;
+}
+
+#button-container {
+	text-align: center;
+}
+
+#reset-button {
+	color: #bba8aa;
+	margin: 12px 0;
+	padding: 4px 0;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+
+#game-info {
+	text-align: center;
+}
+
+#option-container {
+	width: 200px;
+	height: 30px;
+	margin: 10px 0;
+	background: #d6cdcd;
+	display: flex;
+	align-items: center;
+}
+p {
+	margin: 12px 0;
+	padding: 4px 0;
 }

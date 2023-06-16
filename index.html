@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,26 +8,39 @@
     <title>Battleships</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div id="game-info">
-        <p>Turn: <span id="turn-display"></p>
-        <p>Info: <span id="info"></span></p>
+    <div id="wrapper">
+        <div id="game-info">
+            <p>- BATTLESHIP II -</p>
+        </div>
+
+        <div id="gamesGrid-container">
+
+        </div>
+
+        <div id="option-container">
+            <div id="0" class="destroyer-preview  undestroyed-ship-color"></div>
+            <div id="1" class="submarine-preview undestroyed-ship-color"></div>
+            <div id="2" class="cruiser-preview undestroyed-ship-color"></div>
+            <div id="3" class="battleship-preview undestroyed-ship-color"></div>
+            <div id="4" class="carrier-preview undestroyed-ship-color"></div>
+        </div>
+
+        <div id="game-info">
+            <div id="face"></div>
+        </div>
+        <div id="message-container">
+            <div class="game-message">
+
+            </div>
+        </div>
+        <div id="button-container">
+            <button id="reset-button">RESET</button>
+        </div>
     </div>
-
-    <div id="gamesboard-container"></div>
-
-    <div class="option-container">
-        <div class="destroyer-preview destroyer" draggable="true"></div>
-        <div class="submarine-preview submarine" draggable="true"></div>
-        <div class="cruiser-preview cruiser" draggable="true"></div>
-        <div class="battleship-preview battleship" draggable="true"></div>
-        <div class="carrier-preview carrier" draggable="true" ></div>
-    </div>
-
-    <button id="rotate-button">ROTATE</button>
-    <button id="start-button">START</button>
-
     <script src="script.js"></script>
 
 </body>
+
 </html>
