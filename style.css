@@ -6,9 +6,7 @@
 	box-sizing: border-box;
 	background-color: #d6cdcd;
 	font-family: courier;
-	/* font-family: 'Open Sans', sans-serif; */
 	color: #1d222e;
-	/* font-family: 'Poppins', sans-serif; */
 }
 
 /* black #1d222e */
@@ -81,11 +79,11 @@
 	border-radius: 5px;
 }
 
-.undestroyed-ship-color{
+.undestroyed-ship-color {
 	background-color: #1d222e;
 }
 
-.destroyed-ship-color{
+.destroyed-ship-color {
 	background-color: #d74846;
 }
 
@@ -140,6 +138,108 @@ p {
 	padding: 10px 0;
 }
 
-.game-message{
+.game-message {
 	height: 30px;
+}
+
+/* Media queries dla ekranów o szerokości mniejszej niż 1000px */
+@media (max-width: 1000px) {
+	#wrapper {
+		transform: translate(-50%, -50%);
+		width: 50%;
+	}
+
+	.game-grid {
+		width: 200px;
+		height: 200px;
+	}
+
+	.block {
+		width: 20px;
+		height: 20px;
+		border: 1px solid #d6cdcd;
+		border-radius: 3px;
+	}
+
+	.destroyer-preview {
+		width: 20px;
+		height: 10px;
+		margin: 3px;
+		border-radius: 5px;
+	}
+	.submarine-preview {
+		width: 30px;
+		height: 10px;
+		margin: 3px;
+		border-radius: 5px;
+	}
+
+	.cruiser-preview {
+		width: 30px;
+		height: 10px;
+		margin: 3px;
+		border-radius: 5px;
+	}
+
+	.battleship-preview {
+		width: 40px;
+		height: 10px;
+		margin: 3px;
+		border-radius: 5px;
+	}
+
+	.carrier-preview {
+		width: 50px;
+		height: 10px;
+		margin: 3px;
+		border-radius: 5px;
+	}
+
+	.undestroyed-ship-color {
+		background-color: #1d222e;
+	}
+
+	.destroyed-ship-color {
+		background-color: #d74846;
+	}
+
+	.boom {
+		background-color: #d74846 !important;
+	}
+
+	.empty {
+		background-color: #fff !important;
+	}
+
+	.sunk-message {
+		font-size: 12px;
+	}
+
+	#message-container {
+		font-size: 12px;
+	}
+
+	#reset-button {
+		font-size: 8px;
+		margin: 1px 0;
+		padding: 4px 0;
+	}
+
+	#option-container {
+		font-size: 8px;
+		width: 200px;
+		height: 30px;
+		margin: 10px 0;
+	}
+
+	p {
+		font-size: 16px;
+		margin: 12px 0;
+		padding: 4px 0;
+	}
+
+	#button-container {
+		text-align: center;
+		margin-top: 30px;
+	}
 }
