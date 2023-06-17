@@ -159,34 +159,34 @@ p {
 	}
 
 	.destroyer-preview {
-		width: 30px;
+		width: 50px;
 		height: 10px;
 		margin: 3px;
 		border-radius: 5px;
 	}
 	.submarine-preview {
-		width: 40px;
+		width: 60px;
 		height: 10px;
 		margin: 3px;
 		border-radius: 5px;
 	}
 
 	.cruiser-preview {
-		width: 40px;
+		width: 60px;
 		height: 10px;
 		margin: 3px;
 		border-radius: 5px;
 	}
 
 	.battleship-preview {
-		width: 50px;
+		width: 70px;
 		height: 10px;
 		margin: 3px;
 		border-radius: 5px;
 	}
 
 	.carrier-preview {
-		width: 60px;
+		width: 80px;
 		height: 10px;
 		margin: 3px;
 		border-radius: 5px;
@@ -223,10 +223,8 @@ p {
 	}
 
 	#option-container {
-		font-size: 8px;
 		width: 300px;
 		height: 40px;
-		margin: 10px 0;
 		display: flex;
 		align-items: center;
 	}
