@@ -135,8 +135,20 @@ p {
 	padding: 10px 0;
 }
 
+.high-score{
+	color: #9e8e8f;
+	font-size: 18px;
+	margin: 10px 0;
+}
+
+.score{
+	color: #9e8e8f;
+	font-size: 18px;
+	margin: 10px 0;
+}
+
 .game-message {
-	height: 30px;
+	height: 20px;
 }
 
 /* Media queries dla ekranów o szerokości mniejszej niż 1000px */
