@@ -136,11 +136,10 @@ resetBtn.addEventListener('click', resetGame);
 function checkGameOver() {
 	if (foundShipsCount === ships.length) {
 		const totalMoves = document.querySelectorAll('.boom').length + document.querySelectorAll('.empty').length;
-		let  score = 100 - totalMoves;
+		highScore = 100 - score;
 		messageCont.innerHTML = `Congratulations! <br>You have sunk all the ships! <br>Total moves: ${totalMoves}`;
 
-		highScore = totalMoves >= highScore ? totalMoves : highScore; // if score > highscore => high score = score
-
+		highScore = score >= highScore ? score : highScore;
 		localStorage.setItem('high-score', highScore);
 		highScoreElement.innerText = `High Score: ${highScore}`;
 	}
@@ -148,11 +147,14 @@ function checkGameOver() {
 
 function startNewGame() {
 	resetGame();
-	foundShipsCount = 0;
-	messageCont.innerHTML = '';
 }
 
 function resetGame() {
+	score = 0;
+	foundShipsCount = 0;
+	messageCont.innerHTML = '';
+	scoreElement.innerText = `Current Score: 100`;
+
 	const shipBlocks = document.querySelectorAll('.taken');
 	shipBlocks.forEach(shipBlock => {
 		shipBlock.classList.remove('taken');
