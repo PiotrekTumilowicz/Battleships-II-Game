@@ -2,11 +2,18 @@ const rotateBtn = document.querySelector('#rotate-button');
 const optionCont = document.querySelector('.option-container');
 const messageCont = document.querySelector('.game-message');
 const gamesGridCont = document.querySelector('#gamesGrid-container');
+const highScoreElement = document.querySelector('.high-score');
+const scoreElement = document.querySelector('.score');
 
 const blockWidth = 10;
+let foundShipsCount = 0;
+let score = 0;
+
+// Get high score from local storage
+let highScore = localStorage.getItem('high-score') || 0;
+highScoreElement.innerText = `High Score: ${highScore}`;
 
 function createGrid(color, user) {
-
 	const gameBlockContainer = document.createElement('div');
 
 	gameBlockContainer.classList.add('game-grid');
@@ -39,7 +46,6 @@ const carrier = new Ship('carrier', 5);
 const ships = [destroyer, submarine, cruiser, battleship, carrier];
 
 function addShipPiece(ship) {
-
 	const allGridBlocks = document.querySelectorAll(`#computer div`);
 
 	let randomBoolean = Math.random() < 0.5;
@@ -88,27 +94,24 @@ function addShipPiece(ship) {
 }
 ships.forEach(ship => addShipPiece(ship));
 
-
 function handleClick(event) {
-	
 	const targetBlock = event.target;
-	if (targetBlock.classList.contains('empty') || targetBlock.classList.contains('boom') || targetBlock.classList.contains('game-grid')) {
+	if (
+		targetBlock.classList.contains('empty') ||
+		targetBlock.classList.contains('boom') ||
+		targetBlock.classList.contains('game-grid')
+	) {
 		return;
 	}
 
 	if (targetBlock.classList.contains('taken')) {
 		targetBlock.classList.add('boom');
-		
 		console.log(targetBlock.classList[1]);
-		
 		const shipName = targetBlock.classList[1];
 		messageCont.innerHTML = `Boom! You hit a ${shipName}!`;
-
 		const shipBlocks = document.querySelectorAll(`.${targetBlock.classList[1]}`);
-		console.log(shipBlocks)
 		const allShipBlocksHit = Array.from(shipBlocks).every(shipBlock => shipBlock.classList.contains('boom'));
-		console.log(allShipBlocksHit)
-
+		score++;
 		if (allShipBlocksHit) {
 			messageCont.innerHTML += `<br>The ${shipName} sunk!`;
 			const shipToColor = document.querySelector(`.${shipName}-preview`);
@@ -116,25 +119,30 @@ function handleClick(event) {
 			shipToColor.classList.remove('undestroyed-ship-color');
 			shipToColor.classList.add('destroyed-ship-color');
 			foundShipsCount++;
-			
 			checkGameOver();
 		}
 	} else {
 		targetBlock.classList.add('empty');
 		messageCont.innerHTML = `You hit a block!`;
+		score++;
 	}
+	console.log(score);
+	scoreElement.innerText = `Current Score: ${100 - score}`;
 }
 gamesGridCont.addEventListener('click', handleClick);
-
 const resetBtn = document.querySelector('#reset-button');
 resetBtn.addEventListener('click', resetGame);
-
-let foundShipsCount = 0;
 
 function checkGameOver() {
 	if (foundShipsCount === ships.length) {
 		const totalMoves = document.querySelectorAll('.boom').length + document.querySelectorAll('.empty').length;
+		let  score = 100 - totalMoves;
 		messageCont.innerHTML = `Congratulations! <br>You have sunk all the ships! <br>Total moves: ${totalMoves}`;
+
+		highScore = totalMoves >= highScore ? totalMoves : highScore; // if score > highscore => high score = score
+
+		localStorage.setItem('high-score', highScore);
+		highScoreElement.innerText = `High Score: ${highScore}`;
 	}
 }
 
@@ -157,8 +165,8 @@ function resetGame() {
 
 	const shipOptionsBlocks = document.querySelectorAll('.destroyed-ship-color');
 	shipOptionsBlocks.forEach(shipOptionBlock => {
-	  shipOptionBlock.classList.remove('destroyed-ship-color');
-	  shipOptionBlock.classList.add('undestroyed-ship-color');
+		shipOptionBlock.classList.remove('destroyed-ship-color');
+		shipOptionBlock.classList.add('undestroyed-ship-color');
 	});
 
 	const boomBlocks = document.querySelectorAll('.boom');
