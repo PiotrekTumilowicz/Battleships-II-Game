@@ -251,4 +251,11 @@ p {
 		text-align: center;
 		margin-top: 60px;
 	}
+	
+	.high-score{
+	font-size: 14px;
+	}
+
+	.score{
+	font-size: 14px;
 }
